@@ -8,8 +8,8 @@
 #ifndef DWATER_SRC_BASE_TIMESTAMP_H
 #define DWATER_SRC_BASE_TIMESTAMP_H
 
-#include "copyable.h"
-#include "types.h"
+#include "dwater/base/copyable.h"
+#include "dwater/base/types.h"
 
 #include <boost/operators.hpp>
 

@@ -7,9 +7,9 @@
 #ifndef DWATER_SRC_BASE_PROCESS_INFO_H
 #define DWATER_SRC_BASE_PROCESS_INFO_H
 
-#include "string_piece.h"
-#include "types.h"
-#include "timestamp.h"
+#include "dwater/base/string_piece.h"
+#include "dwater/base/types.h"
+#include "dwater/base/timestamp.h"
 
 #include <vector>
 #include <sys/types.h>

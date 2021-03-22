@@ -7,7 +7,7 @@
 #ifndef DWATER_SRC_BASE_SINGLETON_H
 #define DWATER_SRC_BASE_SINGLETON_H
 
-#include "noncopable.h"
+#include "dwater/base/noncopable.h"
 
 #include <stdlib.h>
 #include <pthread.h>

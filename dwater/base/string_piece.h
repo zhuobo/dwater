@@ -11,7 +11,7 @@
 #include <string.h>
 #include <iosfwd>
 
-#include "types.h"
+#include "dwater/base/types.h"
 
 namespace dwater {
 

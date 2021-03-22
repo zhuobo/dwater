@@ -8,9 +8,9 @@
 #ifndef DWATER_SRC_BASE_THREAD_H
 #define DWATER_SRC_BASE_THREAD_H
 
-#include "atomic.h"
-#include "count_down_latch.h"
-#include "types.h"
+#include "dwater/base/atomic.h"
+#include "dwater/base/count_down_latch.h"
+#include "dwater/base/types.h"
 
 #include <functional>
 #include <memory>

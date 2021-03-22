@@ -8,8 +8,8 @@
 #ifndef DWATER_SRC_BASE_BOUNDED_BLOCKING_QUEUE_H
 #define DWATER_SRC_BASE_BOUNDED_BLOCKING_QUEUE_H
 
-#include "mutex.h"
-#include "condition.h"
+#include "dwater/base/mutex.h"
+#include "dwater/base/condition.h"
 
 #include <boost/circular_buffer.hpp>
 #include <assert.h>

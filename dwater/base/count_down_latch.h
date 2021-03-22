@@ -12,8 +12,8 @@
 #ifndef WATER_BASE_SRC_COUNT_DOWN_LATCH_H
 #define WATER_BASE_SRC_COUNT_DOWN_LATCH_H
 
-#include "condition.h"
-#include "mutex.h"
+#include "dwater/base/condition.h"
+#include "dwater/base/mutex.h"
 
 namespace dwater {
 

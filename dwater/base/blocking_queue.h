@@ -7,8 +7,8 @@
 #ifndef DWATER_SRC_BASE_BLOCKING_QUEUE_H
 #define DWATER_SRC_BASE_BLOCKING_QUEUE_H
 
-#include "condition.h"
-#include "mutex.h"
+#include "dwater/base/condition.h"
+#include "dwater/base/mutex.h"
 
 #include <deque>
 #include <assert.h>

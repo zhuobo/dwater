@@ -4,7 +4,7 @@
 #ifndef DWATER_SRC_BASE_CURRENT_THREAD_H
 #define DWATER_SRC_BASE_CURRENT_THREAD_H
 
-#include "types.h"
+#include "dwater/base/types.h"
 
 namespace dwater {
 

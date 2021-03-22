@@ -7,7 +7,7 @@
 #ifndef DWATER_SRC_BASE_EXCEPTION_H
 #define DWATER_SRC_BASE_EXCEPTION_H
 
-#include "types.h"
+#include "dwater/base/types.h"
 
 #include <exception>
 

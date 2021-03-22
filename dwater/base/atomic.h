@@ -9,7 +9,7 @@
 
 #include <stdint.h>
 
-#include "noncopable.h"
+#include "dwater/base/noncopable.h"
 
 namespace dwater {
 

@@ -7,8 +7,8 @@
 #ifndef DWATER_SRC_BASE_LOGGING_H
 #define DWATER_SRC_BASE_LOGGING_H
 
-#include "log_stream.h"
-#include "timestamp.h"
+#include "dwater/base/log_stream.h"
+#include "dwater/base/timestamp.h"
 
 namespace dwater {
 

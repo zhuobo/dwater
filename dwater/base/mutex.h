@@ -9,8 +9,9 @@
 #ifndef DWATER_SRC_BASE_MUTEX_H
 #define DWATER_SRC_BASE_MUTEX_H
 
-#include "noncopable.h"
-#include "current_thread.h"
+#include "dwater/base/noncopable.h"
+#include "dwater/base/current_thread.h"
+
 #include <assert.h>
 #include <pthread.h>
 

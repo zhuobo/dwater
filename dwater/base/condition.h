@@ -12,7 +12,7 @@
 #ifndef DWATER_BASE_SRC_CONDITION_H
 #define DWATER_BASE_SRC_CONDITION_H
 
-#include "mutex.h"
+#include "dwater/base/mutex.h"
 #include <pthread.h>
 
 namespace dwater {

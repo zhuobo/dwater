@@ -4,11 +4,11 @@
 // Filename:        thread.cc
 // Descripton:      
 
-#include "thread.h"
+#include "dwater/base/thread.h"
 
-#include "current_thread.h"
-#include "exception.h"
-#include "logging.h"
+#include "dwater/base/current_thread.h"
+#include "dwater/base/exception.h"
+#include "dwater/base/logging.h"
 
 #include <type_traits>
 #include <errno.h>
