@@ -17,6 +17,9 @@ namespace net {
 
 class Timer;
 
+/// 
+/// 定时器的一个整体，有两个成员一个是定时器，一个是这个定时器的序列号
+/// 
 class TimerId : public dwater::copyable {
 public:
     TimerId(): timer_(nullptr), sequence_(0) {}
@@ -26,7 +29,7 @@ public:
     friend class TimerQueue;
 private:
     Timer* timer_;
-    int64_t sequence_;
+    int64_t sequence_; // 定时器序列号，由原子数生成
 }; // class Timerid
 
 } // namespace net
