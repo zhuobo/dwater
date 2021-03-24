@@ -181,7 +181,7 @@ void socket::ToIp(char* buf, size_t size, const struct sockaddr* addr) {
         const struct sockaddr_in* addr4 = sockaddr_in_cast(addr);
         ::inet_ntop(AF_INET, &addr4->sin_addr, buf, static_cast<socklen_t>(size));
     } else if ( addr->sa_family == AF_INET6 ) {
-        assert(size >= INET4_ADDRSTRLEN);
+        assert(size >= INET_ADDRSTRLEN);
         const struct sockaddr_in6* addr6 = sockaddr_in6_cast(addr);
         ::inet_ntop(AF_INET6, &addr6->sin6_addr, buf, static_cast<socklen_t>(size));
     }
