@@ -129,9 +129,9 @@ private:
     void Update();
     void HandleEventWithGuard(Timestamp receive_time);
 
-    static const int knone_event;
-    static const int kread_event;
-    static const int kwrite_event;
+    static const int        knone_event;
+    static const int        kread_event;
+    static const int        kwrite_event;
 
     EventLoop*              loop_;      // 当前Channel属于的EventLoop 
     const int               fd_;        // 所负责的文件描述符
