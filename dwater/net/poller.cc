@@ -20,5 +20,3 @@ bool Poller::HasChannel(Channel* channel) const {
     return iter != channels_.end() && iter->second == channel;
 }
 
-
-
