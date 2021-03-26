@@ -2,3 +2,5 @@
 *.out
 *.a
 *.o
+*.py
+tags
