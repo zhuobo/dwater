@@ -46,17 +46,16 @@ inline ::std::shared_ptr<To>  DownPointetCast(const ::std::shared_ptr<From>& f) 
 namespace net {
 
 // all client callbacks
+class Buffer;
+class TcpConnection;
+typedef std::shared_ptr<TcpConnection> TcpConnectionPtr;
+typedef std::function<void()> TimerCallback;
+typedef std::function<void (const TcpConnectionPtr&)> ConnectionCallback;
+typedef std::function<void (const TcpConnectionPtr&)> CloseCallback;
+typedef std::function<void (const TcpConnectionPtr&)> WriteCompleteCallback;
+typedef std::function<void (const TcpConnectionPtr&, size_t)> HighWaterMarkCallback;
 
-class                                                       Buffer;
-class                                                       TcpConnection;
-typedef std::shared_ptr<TcpConnection>                      TcpConnectionPtr;
-typedef std::function<void()>                               TimerCallback;
-typedef std::function<void (const TcpConnectionPtr&)>       TcpConnectionCallback;
-typedef std::function<void (const TcpConnectionPtr&)>       CloseCallback;
-typedef std::function<void (const TcpConnectionPtr&)>       WriteCompleteCallback;
-typedef std::function<void (const TcpConnectionPtr&, size_t)> HighWaterMarkCallback;       
-
-
+// the data has been read to (buf, len)
 typedef std::function<void (const TcpConnectionPtr&,
                             Buffer*,
                             Timestamp)> MessageCallback;
@@ -64,7 +63,9 @@ typedef std::function<void (const TcpConnectionPtr&,
 void DefaultConnectionCallback(const TcpConnectionPtr& conn);
 void DefaultMessageCallback(const TcpConnectionPtr& conn,
                             Buffer* buffer,
-                            Timestamp receive_time);
+                            Timestamp receiveTime);
+
+
 } // namespace net;
 
 } // namespace dwater
