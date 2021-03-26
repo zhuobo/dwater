@@ -195,6 +195,14 @@ void socket::FromIpPort(const char* ip, uint16_t port, struct sockaddr_in* addr)
     }
 }
 
+void socket::FromIpPort(const char* ip, uint16_t port, struct sockaddr_in6* addr) {
+    addr->sin6_family = AF_INET6;
+    addr->sin6_port = HostToNetwork16(port);
+    if ( ::inet_pton(AF_INET6, ip, &addr->sin6_addr) <= 0 ) {
+        LOG_SYSERR << "socket::FromIpPort";
+    }
+}
+
 int socket::GetSocketError(int sockfd) {
     int optval;
     socklen_t optlen = static_cast<socklen_t>(sizeof optval);
