@@ -117,7 +117,7 @@ void EventLoop::Loop() {
 // 别的线程会调用这个函数将quit_设置为false，因此loop_停止循环获取事件、处理事件
 // 不是马上发生的而是下一轮判断quit_才会停止循环，因此会有延迟
 void EventLoop::Quit() {
-    quit_ = false;
+    quit_ = true;
     if ( !IsInLoopThread() )  {
         Wakeup();
     }
