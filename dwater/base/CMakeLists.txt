@@ -1,29 +1,29 @@
-SET(SRC 
+set(base_SRCS
     async_logging.cc
-    condition.cc
     count_down_latch.cc
-    current_thread.cc
     date.cc
-    exception.cc
     file_util.cc
-    log_file.cc
     logging.cc
-    log_stream.cc
     process_info.cc
-    thread.cc
     timestamp.cc
-    time_zone.cc)
+    condition.cc
+    current_thread.cc
+    exception.cc
+    log_file.cc
+    log_stream.cc
+    thread.cc
+    thread_pool.cc
+    time_zone.cc
+    )
 
-ADD_LIBRARY(dwater_base ${SRC})
+add_library(dwater_base ${base_SRCS})
+target_link_libraries(dwater_base pthread rt)
 
-TARGET_LINK_LIBRARIES(dwater_base pthread rt)
+install(TARGETS dwater_base DESTINATION lib)
 
-INSTALL(TARGETS dwater_base DESTINATION lib)
+file(GLOB HEADERS "*.h")
+install(FILES ${HEADERS} DESTINATION include/dwater/base)
 
-FILE(GLOB HEADERS "*.h")
-
-INSTALL(FILES ${HEADERS} DESTINATION include/dwater/base)
-
-IF(DWATER_BUILD_EXAMPLES)
-    ADD_SUBDIRECTORY(tests)
-ENDIF()
+if(DWATER_BUILD_EXAMPLES)
+  add_subdirectory(tests)
+endif()

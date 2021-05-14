@@ -39,7 +39,7 @@ EventLoop* EventLoopThread::StartLoop() {
         }
         loop = loop_;
     }
-    return loop_;
+    return loop;
 }
 
 void EventLoopThread::ThreadFunc() {
