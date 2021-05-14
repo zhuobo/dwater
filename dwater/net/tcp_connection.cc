@@ -40,6 +40,7 @@ TcpConnection::TcpConnection(EventLoop* loop,
       state_(kconnecting),
       reading_(true),
       socket_(new Socket(sockfd)),
+      channel_(new Channel(loop, sockfd)),
       local_addr_(local_addr),
       peer_addr_(peer_addr),
       high_water_mark_(64 * 1024 * 1024) {
