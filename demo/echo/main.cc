@@ -14,7 +14,7 @@
 
 
 int main() {
-    LOG_INFO << "PID = " << getpid();
+    LOG_INFO << " PID = " << getpid();
     dwater::net::EventLoop loop;
     dwater::net::InetAddress listen_addr(2008);
     EchoServer server(&loop, listen_addr);
