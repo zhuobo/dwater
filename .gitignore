@@ -5,3 +5,6 @@
 *.py
 tags
 build
+.ccls-cache
+compile_commands.json
+.clangd

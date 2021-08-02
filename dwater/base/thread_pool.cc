@@ -42,6 +42,7 @@ void ThreadPool::Start(int num_threads) {
     }
 }
 
+// 等待所有线程都执行完毕
 void ThreadPool::Stop() {
     { 
         MutexLockGuard lock(mutex_);
@@ -60,9 +61,10 @@ size_t ThreadPool::QueueSize() const {
     return queue_.size();
 }
 
+// 并非真的执行，而是加入任务队列
 void ThreadPool::Run(Task task) {
     if ( threads_.empty() ) {
-        task();
+        task(); // 如果没有子线程，那么就直接在主线程执行
     } else {
         MutexLockGuard lock(mutex_);
         while ( IsFull() && running_ ) {
@@ -73,10 +75,11 @@ void ThreadPool::Run(Task task) {
         }
         assert(!IsFull());
         queue_.push_back(std::move(task));
-        not_empty_.Notify();
+        not_empty_.Notify(); // 通知某个线程任务队列非空了
     }
 }
 
+// 从任务队列取出一个任务并返回
 ThreadPool::Task ThreadPool::Take() {
     MutexLockGuard lock(mutex_);
     while ( queue_.empty() && running_ ) {
@@ -93,12 +96,12 @@ ThreadPool::Task ThreadPool::Take() {
     return task;
 }
 
-
 bool ThreadPool::IsFull() const {
     mutex_.AssertLocked();
     return max_queue_size_ > 0 && queue_.size() >= max_queue_size_;
 }
 
+// 从任务队列取出一个任务来执行
 void  ThreadPool::RunInThread() {
     try {
         if ( thread_init_callback_ ) {
